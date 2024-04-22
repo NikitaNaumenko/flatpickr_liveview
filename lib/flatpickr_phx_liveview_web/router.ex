@@ -17,7 +17,7 @@ defmodule FlatpickrPhxLiveviewWeb.Router do
   scope "/", FlatpickrPhxLiveviewWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/users", UserLive.Index, :index
   end
 
   # Other scopes may use custom stacks.

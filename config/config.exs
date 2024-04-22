@@ -22,6 +22,8 @@ config :flatpickr_phx_liveview, FlatpickrPhxLiveviewWeb.Endpoint,
   pubsub_server: FlatpickrPhxLiveview.PubSub,
   live_view: [signing_salt: "o3bUIl3s"]
 
+config :flop, repo: FlatpickrPhxLiveview.Repo
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails

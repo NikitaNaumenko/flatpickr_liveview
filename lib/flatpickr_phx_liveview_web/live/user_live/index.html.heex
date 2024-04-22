@@ -1,0 +1,24 @@
+<.header>
+  Listing Users
+  <.form :let={f} for={@form} id="date-filter-form" phx-change="update-filter">
+    <%= PhoenixHTMLHelpers.Form.inputs_for f, :filters, [fields: [inserted_at_date: [op: :in]]], fn ff -> %>
+      <.hidden_inputs_for_filter form={ff} />
+
+      <div class="relative" id="date-filter" phx-update="ignore">
+        <.input
+          field={ff[:value]}
+          label=""
+          type="text"
+          class="ps-10 min-w-[250px]"
+          phx-debounce={500}
+          phx-hook="DateRangePickerHook"
+          data-default-dates={Jason.encode!(@default_dates)}
+        />
+      </div>
+    <% end %>
+  </.form>
+</.header>
+
+<.table id="users" rows={@streams.users}>
+  <:col :let={{_id, user}} label="username"><%= user.username %></:col>
+</.table>

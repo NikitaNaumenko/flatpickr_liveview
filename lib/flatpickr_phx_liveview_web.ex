@@ -87,6 +87,7 @@ defmodule FlatpickrPhxLiveviewWeb do
       import FlatpickrPhxLiveviewWeb.CoreComponents
       import FlatpickrPhxLiveviewWeb.Gettext
 
+      import Flop.Phoenix, only: [filter_fields: 1, hidden_inputs_for_filter: 1]
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
 

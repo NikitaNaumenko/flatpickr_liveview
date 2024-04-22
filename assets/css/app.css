@@ -2,4 +2,6 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@import "flatpickr/dist/themes/airbnb.css";
+
 /* This file is for your main application CSS */
